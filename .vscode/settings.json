@@ -1,4 +1,67 @@
 {
     "git.ignoreLimitWarning": true,
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5502,
+    "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": [
+            //following will be in italic (=FlottFlott)
+            "comment",
+            "entity.name.type.class", //class names
+            "keyword", //import, export, return…
+            "constant", //String, Number, Boolean…, this, super
+            "storage.modifier", //static keyword
+            "storage.type.class.js", //class keyword
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        }, 
+        {
+          //аргумент функции кцвет и начертание
+          "name": "Function argument",
+          "scope": "variable.parameter",
+          "settings": {
+            "fontStyle": "",
+            "foreground": "#f3870c"
+          }
+        },
+        {
+          //классы цвет и начертание 
+          "name": "Library class/type",
+          "scope": "support.type, support.class",
+          "settings": {
+             "fontStyle": "",
+            // "foreground": "#ef66e8"
+          }
+        },
+        {
+          //Функция цвет и начертание 
+          "name": "Storage type",
+          "scope": "storage.type",
+          "settings": {
+            "fontStyle": "",
+            "foreground": "#66D9EF"
+          }
+        },
+        {
+          "scope": [
+            //following will be excluded from italics (VSCode has some defaults for italics)
+            "invalid",
+            "keyword.operator",
+            "constant.numeric.css",
+            "keyword.other.unit.px.css",
+            "constant.numeric.decimal.js",
+            "constant.numeric.json"
+          ],
+          "settings": {
+            "fontStyle": ""
+          },
+          
+        }
+      ],
+    },
+  
 }

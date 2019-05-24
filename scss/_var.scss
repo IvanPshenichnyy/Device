@@ -1,0 +1,78 @@
+$bgColor: #f0c52e;
+$btnColor: #f0c52e; //цвет фона кнопки
+
+
+@mixin btn {
+    /*== == Кнопка == ==*/
+    position: relative;
+    // z-index: 3;
+    outline: none;
+    background-color: transparent;
+    border: none;
+
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 2.15px;
+    text-transform: uppercase;
+
+    padding: 10px 20px 10px 20px;
+    // margin-bottom: 5px;
+    color: black;
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background-color: $btnColor;
+
+        transform: scaleY(.2);
+        -webkit-transform: scaleY(.2);
+        -moz-transform: scaleY(.2);
+        -ms-transform: scaleY(.2);
+        -o-transform: scaleY(.2);
+        transform-origin: 50%;
+        -webkit-transform-origin: 50%;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+
+    }
+
+    &:active {
+        opacity: .6;
+    }
+
+    &:hover:before,
+    &:focus:before,
+    &:active:before {
+        transform: scaleY(1);
+    }
+
+    /*== == Кнопка конец == ==*/
+}
+
+
+@mixin container {
+    width: calc(100% - 140px); //или изменить на 1160px
+    margin: 0 auto;
+    padding: 0 10px;
+}
+@mixin hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+  
+}

@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Gilroy Extra Bold';
+    src: url('/fonts/gilroyextrabold.woff2') format('woff');
+    font-weight: bold;
+    font-style: bold;
+    }
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/opensans.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }    
+@font-face {
+    font-family: 'Open Sans light';
+    src: url('/fonts/opensanslight.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}    
+
+    @mixin GilroyB($fsz, $fw, $lh){
+        font-family: 'Gilroy Extra Bold', sans-serif;
+        font-size: $fsz;
+        font-weight: $fw;
+        line-height: $lh;
+    }
+
+    @mixin Sans($fsz, $fw, $lh) {
+        font-family: 'Open Sans' , sans-serif;
+        font-size: $fsz;
+        font-weight: $fw;
+        line-height: $lh;
+    }
+    @mixin SansLight($fsz, $fw, $lh) {
+        font-family: 'Open Sans light' , sans-serif;
+        font-size: $fsz;
+        font-weight: $fw;
+        line-height: $lh;
+    }
+    @mixin hoverOpc{
+        &:hover{
+            opacity: .5;
+        }
+    }
