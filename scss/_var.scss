@@ -61,18 +61,40 @@ $btnColor: #f0c52e; //цвет фона кнопки
 
 
 @mixin container {
+    //контейнер
     width: calc(100% - 140px); //или изменить на 1160px
     margin: 0 auto;
     padding: 0 10px;
 }
 @mixin hidden {
-        position: absolute;
+    //Скрыть элемент
+    // .visually-hidden{
+    //     &:not(:focus),
+    //     &:not(:active),
+    //     input[type="radio"],
+    //     input[type="checkbox"]{
+            position: absolute;
+
         width: 1px;
         height: 1px;
         margin: -1px;
         padding: 0;
         border: 0;
+
+        white-space: nowrap;
+        
+        clip-path: inset(100%);
         clip: rect(0 0 0 0);
         overflow: hidden;
-  
+
+        // }
+    }
+        
+@mixin outline {
+    background: rgba(255, 45, 82, 0.3);
+    box-shadow: inset 0 0 0 3 rgb(255, 45, 82);
+    outline: 2px solid rgba(red, .6);
+    
 }
+
+  

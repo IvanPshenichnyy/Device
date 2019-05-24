@@ -100,11 +100,13 @@
             <aside>
                 <h3>Фильтры</h3>
                 <form action="" method="get">
-                <fieldset>
+                <fieldset class="price-selection">
                     <legend>Стоимость</legend>
-                    <span>*</span>
-                    <span>--------</span>
-                    <span>*</span>
+                    <div class="wrap">
+                        <span value="От 0" class="round__btn">*</span>
+                        <span class="line">--------</span>
+                        <span value="До 5000" class="round__btn">*</span>
+                    </div>
                 </fieldset>
                 <fieldset>
                     <legend>Цвет</legend>
@@ -127,9 +129,9 @@
                 <div class="content-sort">
                     <h3>Сортировка:</h3>
                     <ul>
-                        <li class="active"><a href="#">По цене</a></li>
-                        <li><a href="#">По типу</a></li>
-                        <li><a href="#">По популярности</a></li>
+                        <li class="active"><button href="#">По цене</button></li>
+                        <li><button href="#">По типу</button></li>
+                        <li><button href="#">По популярности</button></li>
                    
                     </ul>
                     <div><a></a><a></a></div>
@@ -185,11 +187,12 @@
                 
                 <div class="pagination">
                     <ul>
-                        <li><a href="">Назад</a></li>
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">Вперёд</a></li>
+                        <li class="pagiation-item pagiation-item_current"><a href="">Назад</a></li>
+                        <li class="pagiation-item active"><a href="">1</a></li>
+                        <li class="pagiation-item" ><a href="">2</a></li>
+                        <li class="pagiation-item" ><a href="">3</a></li>
+                        <li class="pagiation-item" ><a href="">Вперёд</a></li>
+
                     </ul>
                 </div>
 

@@ -9,7 +9,7 @@
 
 html,
 body {
-  @include Sans(16px, 600, 16px);
+  @include Sans(16px, 300, 16px);
   padding: 0;
   margin: 0;
 }
@@ -43,7 +43,7 @@ button {
 .header-container {
   position: relative;
   width: 100%;
-  // min-height: 299px;
+  min-height: 186px;
   background: linear-gradient(to bottom, rgba(#f0c52e,.5) 100%, white 100%, white 100% );
   // background-color: rgba($bgColor, .5);
   padding: 0 60px;
@@ -136,21 +136,23 @@ button {
       display: flex;
       justify-content: space-between;
 
+     
     }
 
     li {
+      padding-left: 20px;
       &:nth-child(1) {
-        flex-grow: 2;
       }
 
       &:nth-child(2) {
-        flex-grow: 1;
+        margin-left: auto;
       }
     }
 
     .nav-targ {
+      // @include outline;
       a {
-        @include Sans(15px, 300, 30px);
+        // @include Sans(15px, 300, 30px);
         color: black;
 
         &::before {
@@ -196,64 +198,50 @@ button {
     margin-top: 20px;
 
     .main-catalog {
-
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: space-between;
 
       li:nth-child(1) {
-        flex-grow: 1.2;
-        width: 350px;
-
+        margin-right: auto;
       }
 
       li:nth-child(2) {
-        // flex-grow: 0;
         margin-right: 20px;
       }
-
-      li:nth-child(3) {
-        flex-grow: .6;
+      li:nth-child(4) {
+        margin-left: auto;
       }
 
       .catalog-shop {
-        
+        // @include outline;
         .flex-wrap {
-          
-          margin: 0;
-          padding: 10px 0;
-          width: 600px;
-          // display: flex;
-          display: none;
-          justify-content: space-between;
+          // @include outline;
           position: absolute;
+          display: none;
+          margin: 0;
+          padding: 12px 0;
+          width: 100%;
+          min-height: 130px;
           z-index: 55;
-          
+          background-color: #f7e296;
+          transform: translate(-60px);
+
           &::before {
             content: '';
-            // display: block;
-            position: absolute;
-            background-color: #f7e296;
-            width: 1120px;
-            left: -60px;
-            top: 0;
-            right: 0;
-            bottom: -16px;
+            display: block;
+            padding-left: 60px;
             z-index: -10;
           }
 
-          // display: none;
           li {
-            margin: 0;
-            padding: 0;
-            width: 180px;
-
+            padding-right: 15px;
+            padding-bottom: 5px;
             a {
               @include Sans(15px, 300, 36px);
               text-transform: none;
               letter-spacing: 0.15px;
-
             }
           }
         }
@@ -264,7 +252,10 @@ button {
         }  
         .catalog-items {
           padding: 0;
-          // margin: 20px;
+        }
+        >a::after {
+          content: url('/img/plus.png');
+          padding-left: 15px;
         }
 
       }
@@ -274,43 +265,17 @@ button {
           @include GilroyB(18px, 400, 24px);
           text-transform: uppercase;
           letter-spacing: 3.6px;
-
+          color: black;
+          &:hover,
+          &:focus {
+            opacity: .5;
+          }
+          &:active {
+            opacity: .3;
+          }
         }
       }
-
-      .catalog-shop a {
-        @include Sans(15px, 300, 36px)
-      }
-
-      .catalog-shop>a {
-        @include GilroyB(18px, 400, 24px);
-        text-transform: uppercase;
-        letter-spacing: 3.6px;
-
-      }
-
-      .catalog-shop>a::after {
-        content: url('/img/plus.png');
-        width: 16px;
-        height: 16px;
-        padding-left: 15px;
-      }
     }
-
-    a {
-      color: black;
-      width: 200px;
-
-      &:hover,
-      :focus {
-        opacity: .5;
-      }
-      &:active {
-        opacity: .3;
-      }
-
-    }
-
   }
 }
 
@@ -323,22 +288,18 @@ button {
   padding: 90px;
   background-color: #ffffff;
 
-  position: absolute;
+  position: fixed;
   z-index: 999;
   top: 50%;
   left: 50%;
-  transform: translate(-50%);
-  -webkit-transform: translate(-50%);
-  -moz-transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  -o-transform: translate(-50%);
+  transform: translate(-50%, -50%);
+
   box-shadow: 0 10px 20px rgba(4, 6, 6, 0.2);
 
   label {
     @include GilroyB(18px, 400, 24px);
 
   }
-
   .flex-form {
     display: flex;
     justify-content: space-between;
@@ -354,7 +315,7 @@ button {
 
   input,
   textarea {
-    @include Sans(14px, 400, 18px);
+    font-size: 14px;
     padding: 10px;
     width: 100%;
     background-color: #f2f2f2;
@@ -366,12 +327,10 @@ button {
   textarea {
     height: 156px;
     resize: none;
-
   }
 
   button[type="submit"] {
     margin-top: 20px;
-
   }
 
   .close-modal-btn {
@@ -394,12 +353,12 @@ button {
       background-color: $bgColor;
     }
 
-    &:active {
+    &:active,
+    &:focus {
       opacity: .3;
     }
 
     span {
-
       &::after,
       &::before {
         content: '';
@@ -431,21 +390,17 @@ button {
 }
 
 .big-map {
+  position: fixed;
   width: 960px;
-  height: 559px;
+  height: 535px;
   box-shadow: 0 10px 20px rgba(4, 6, 6, 0.2);
   // background-color: red;
   background-image: url('/img/map-big.jpg.png');
   background-position: center;
   background-repeat: no-repeat;
-  position: absolute;
-  top: -18px;
-  // left: 50%;
-  transform: translate(-50%);
-  -webkit-transform: translate(-50%);
-  -moz-transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  -o-transform: translate(-50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   z-index: 999;
 
   .close-modal-btn {
@@ -469,7 +424,8 @@ button {
       background-color: $bgColor;
     }
 
-    &:active {
+    &:active,
+    &:focus {
       opacity: .3;
     }
 
@@ -511,22 +467,23 @@ button {
 .main-summary{
   position: relative;
   min-width: 488px;
+  min-height: 488px;
   background: linear-gradient(to bottom, rgba(#f0c52e,.5) 17%, white 17%, white 100% );
+  .summary-img {
+    height: 488px;
+  }
 }
 .summary {
+  // @include outline;
   display: flex;
   justify-content: space-between;
   position: relative;
   margin: 0;
   padding: 0;
-  // top: -80px;
   z-index: 10;
-
-}
-
-
-.summary-img {
-  margin: 0 40px;
+  .summary-img {
+    margin: 0 40px;
+  }
 }
 
 .summary-description {
@@ -536,35 +493,43 @@ button {
 .summary-description h2 {
   @include GilroyB(47px, 800, 56px);
   letter-spacing: 0.17px;
-  // width: 394px;
   margin-top: 60px;
   top: -10px;
   position: relative;
+  &::after {
+    @include GilroyB(179px, 400, inherit);
+    position: absolute;
+    color: white;
+    top: -30px;
+    right: 60px;
+  }
 }
-
-
-.summary-description h2::after {
-  @include GilroyB(179px, 400, inherit);
-  position: absolute;
-  color: white;
-  top: -30px;
-  right: 60px;
+.summary-monopod{
+  h2{
+    &::after {
+      content: "01";
+    }
+  }
 }
+.summary-watch{
+  h2{
+    &::after {
+      content: "02";
+    }
+  }
+} 
 
-.summary-monopod h2::after {
-  content: "01";
-}
+.summary-quadro{
+  h2{
+    &::after {
+      content: "03";
+      z-index: -1;
+    }
+  }
+} 
 
 
-.summary-watch h2::after {
-  content: "02";
-  // top: -40px;
-}
 
-.summary-quadro h2::after {
-  content: "03";
-  z-index: -1;
-}
 
 .summary-description h2::before {
   content: "";
@@ -576,7 +541,7 @@ button {
   height: 7px;
 }
 
-.summary-description>p {
+.summary-description > p {
   width: 479px;
   color: #464646;
   font-family: "Open Sans";
@@ -600,44 +565,30 @@ button {
 
 .summary-description .specifications p {
   font-size: 30px;
-  font-weight: 300;
-  font-family: "Open Sans", sans-serif;
 }
 
 .summary-description .specifications p span {
   font-size: 13px;
 }
 
-.main-summary {
-  position: relative;
-
-  .summary-img {
-    height: 488px;
-  }
-}
 
 .summary-select {
   position: absolute;
   z-index:  662;
-
-  bottom: 188px;
-  right: 85px;
+  bottom: 190px;
+   right: 150px;
   
 
-  
-  
   .summary-sellect_btn {
     padding: 0;
     border: none;
-    // font: inherit;
-    color: inherit;
     background-color: transparent;
     
     &::after{
     content: '';
     position: absolute;
     border-width: none;
-    outline: none;
+    // outline: none;
     width: 14px;
     height: 14px;
     border: 1.4px solid black;
@@ -650,8 +601,6 @@ button {
     -ms-border-radius: 60%;
     -o-border-radius: 60%;
     background-color: transparent;
-
-   
     }
     &:not(:last-child) {
       margin-right: 20px;
@@ -663,13 +612,13 @@ button {
       &::before {
         content: '';
         position: absolute;
-        top: 36%;
+        top: 50%;
         z-index: 665;
         //right: 50%;
         //bottom: 50%;
         transform: translate(-50%, 50%);
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
         border: 1px solid black;
         border-radius: 50%;
         // background-color: black;
@@ -688,6 +637,65 @@ button {
 
 /*==== Главвная топ-3 товаров конец  =====*/
 
+
+
+
+.shop-nav {
+  margin-top: 100px;
+  .shop-nav-option {
+    display: flex;
+    justify-content: space-around;
+
+    li:nth-child(2) {
+      p {
+        overflow: hidden;
+
+        a {
+          height: 116px;
+          align-self: flex-end;
+        }
+      }
+    }
+
+    .shop-nav-item {
+      &:active {
+        opacity: .9;
+      }
+
+      p {
+        @include GilroyB(18px, 400, 24px);
+        padding: 0;
+        padding-top: 10px;
+        margin: 0;
+        width: 160px;
+
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+
+
+  .shop-nav-item{
+    &:hover{
+      .shop-image{
+        background-color: #f0c52e;
+      }
+    }
+    
+    .shop-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7e296;
+    width: 160px;
+    height: 160px;
+
+    cursor: pointer;
+  }
+}
+}
 
 
 
@@ -784,14 +792,11 @@ button {
 }
 
 .services-description p {
-  font-family: "Open Sans";
   color: #464646;
   font-size: 15px;
-  font-weight: 300;
 }
-
 .services-description-img {
-  min-height: 300px;
+  min-height: 30px;
   margin-top: 90px;
 }
 
@@ -815,7 +820,6 @@ button {
   }
   }
 }
-
 /* ====  Логотипы брендов  конец==== */
 
 .about-company {
@@ -841,9 +845,8 @@ button {
     }
     p {
       color: #464646;
-      font-family: "Open Sans";
       font-size: 15px;
-      font-weight: 300;
+      line-height: 30px;
       margin-bottom: 30px;
     }
   }
@@ -854,6 +857,20 @@ button {
       margin: 80px 0;
       li{
         padding: 20px 0;
+        font-weight: bold;
+        position: relative;
+        &::before{
+          content: '';
+          position: absolute;
+          width: 8px;
+          height: 12px;
+          margin-top: 4px;
+          margin-left: -40px;
+          background-image: url('/img/slider-button.svg');
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          opacity: .5;
+        }
       }
     }
     .btn {
@@ -1062,58 +1079,11 @@ button {
 
 
 
-.shop-nav {
-  .shop-nav-option {
-    display: flex;
-    justify-content: space-around;
-
-    li:nth-child(2) {
-      p {
-        overflow: hidden;
-
-        a {
-          height: 116px;
-          align-self: flex-end;
-        }
-      }
-    }
-
-    .shop-nav-item {
-      &:hover {
-        cursor: pointer;
-        opacity: .9;
-      }
-
-      p {
-        @include GilroyB(18px, 400, 24px);
-
-        width: 160px;
-
-        a {
-          color: black;
-        }
-      }
-    }
-  }
-
-
-  .shop-nav-item .shop-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f7e296;
-    width: 160px;
-    height: 160px;
-  }
-}
-
-
-
 
 /* === === Стилизация Catalog.html  === === */
 .inner {
   .header-container {
-    min-height: 170px;
+    min-height: 186px;
     padding-bottom: 55px;
     
   }
@@ -1203,9 +1173,68 @@ button {
           width: 201px;
           border-top: 1px solid #000;
         }
-
+        
+        .price-selection{
+          min-height: 138px;
+        }
         fieldset {
+          .wrap{
+            // @include outline;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            .line{
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 196px;
+              height: 2px;
+              transform: translate(-50%,-50%);
+              background: linear-gradient(to right, #91c92f 0px,#91c92f 110px, #dbdbdb 110px,#dbdbdb 196px);
+              font-size: 0;
+            }
+            .round__btn{
+              position: relative;
+              line-height: 0;
+              font-size: 0;
+              display: block;
+              width: 22px;
+              height: 22px;
+              background: #fff;
+              border-radius: 50%;
+              box-shadow: 2px 2px 2px 0 rgba(#000, 0.5);
+              z-index: 3;
+              &:last-child{
+                margin-right: 85px;
+              }
+              &::after{
+                content: '';
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                border-radius: 50%;
+                background-color: rgba(#000, 0.5);
+                z-index: 4;
+              }
+              &::before{
+                content: attr(value);
+                position: absolute;
+                width: 100px;
+                z-index: 4;
+                bottom: -10px;
+
+                color: #464646;
+                font-size: 13px;
+                font-weight: 300;
+                opacity: .5;
+              }
+            }
+          }
           input {
+            
             &[type="checkbox"] {
               visibility: hidden;
 
@@ -1307,6 +1336,7 @@ button {
           &:not(:first-child) {
             // display: flex;
           }
+          
         }
 
 
@@ -1330,7 +1360,20 @@ button {
       justify-content: flex-start;
       background-color: #ebebeb;
       flex: 1;
-
+      button{
+        display: inline-block;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        outline: transparent;
+        &:hover,
+        &:focus{
+          opacity: .5;
+        }
+        &:active{
+          opacity: .3;
+        }
+      }
       ul {
         display: flex;
         justify-content: space-around;
@@ -1389,6 +1432,7 @@ button {
       }
     }
 
+
     .catalog-items {
       display: flex;
       flex-wrap: wrap;
@@ -1399,6 +1443,9 @@ button {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          p{
+            @include GilroyB(18px, 400, 24px);
+          }
           span{
             @include Sans(16px, 300, 18px);
             color: #464646;
@@ -1466,10 +1513,24 @@ button {
     // display: flex;
     margin: 20px;
     ul{
-      padding: 20px;
+      padding: 0;
       display: flex;
       justify-content: space-around;
+      align-items: center;
+      .pagiation-item{
+        a{
+          display: inline-block;
+          padding: 20px;
+        }
+        padding: 0;
+        margin: 0;
+        &:hover{
+          background-color: rgba(#4b4b4b, .3);
+        }
+      }
+
       li{
+              
         margin: 0 20px;
         &:first-child{
           margin-right: auto;
@@ -1481,6 +1542,7 @@ button {
         letter-spacing: 0.91px;
         a{
           color: #000;
+          
         }
 
       }
