@@ -24,7 +24,7 @@
 *::after,
 *::before {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -46,22 +46,17 @@ a {
   cursor: pointer;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 button {
   cursor: pointer;
 }
 
 .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  display: none !important;
 }
 
 .btn {
@@ -153,18 +148,18 @@ button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .header-container .main-nav-top label {
   display: inline-block;
   position: absolute;
   font-size: 0;
-  width: 16px;
+  width: 17px;
   height: 16px;
   transform: translate(50%, 50%);
   background-image: url("/img/search.png");
@@ -218,9 +213,8 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .header-container .main-nav-top li {
@@ -281,8 +275,8 @@ button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .header-container .main-nav .main-catalog li:nth-child(1) {
@@ -300,14 +294,14 @@ button {
 .header-container .main-nav .main-catalog .catalog-shop .flex-wrap {
   position: absolute;
   display: none;
-  margin: 0;
+  margin: 0 -10px;
   padding: 12px 0;
   width: 100%;
   min-height: 130px;
   z-index: 55;
   background-color: #f7e296;
   -webkit-transform: translate(-60px);
-          transform: translate(-60px);
+  transform: translate(-60px);
 }
 
 .header-container .main-nav .main-catalog .catalog-shop .flex-wrap::before {
@@ -346,6 +340,10 @@ button {
   padding-left: 15px;
 }
 
+.header-container .main-nav .main-catalog .catalog-options {
+  margin: 0 10px;
+}
+
 .header-container .main-nav .main-catalog .catalog-options a {
   font-family: 'Gilroy Extra Bold', sans-serif;
   font-size: 18px;
@@ -374,9 +372,9 @@ button {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -webkit-box-shadow: 0 10px 20px rgba(4, 6, 6, 0.2);
-          box-shadow: 0 10px 20px rgba(4, 6, 6, 0.2);
+  box-shadow: 0 10px 20px rgba(4, 6, 6, 0.2);
 }
 
 .modal-contact label {
@@ -391,8 +389,8 @@ button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .modal-contact .flex-form p {
@@ -473,19 +471,19 @@ button {
 }
 
 .big-map {
+  padding: 0 !important;
   position: fixed;
   width: 960px;
   height: 535px;
   -webkit-box-shadow: 0 10px 20px rgba(4, 6, 6, 0.2);
-          box-shadow: 0 10px 20px rgba(4, 6, 6, 0.2);
-  background-image: url("/img/map-big.jpg.png");
-  background-position: center;
-  background-repeat: no-repeat;
+  box-shadow: 0 10px 20px rgba(4, 6, 6, 0.2);
+  background-color: white;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   z-index: 999;
+  display: none;
 }
 
 .big-map .close-modal-btn {
@@ -556,8 +554,8 @@ button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   position: relative;
   margin: 0;
   padding: 0;
@@ -618,7 +616,7 @@ button {
 }
 
 .summary-description > p {
-  width: 479px;
+  max-width: 400px;
   color: #464646;
   font-family: "Open Sans";
   font-size: 15px;
@@ -630,11 +628,30 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.summary-description .specifications {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0;
+}
+
+.summary-description .specifications li p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: space-between;
+  -ms-flex-align: space-between;
+  align-items: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.summary-description .specifications li p span {
+  padding-top: 15px;
 }
 
 .summary-description .specifications li:not(:last-child) {
@@ -672,7 +689,7 @@ button {
   border-radius: 60%;
   z-index: 222;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -webkit-border-radius: 60%;
   -moz-border-radius: 60%;
   -ms-border-radius: 60%;
@@ -714,7 +731,7 @@ button {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .shop-nav .shop-nav-option li:nth-child(2) p {
@@ -724,7 +741,7 @@ button {
 .shop-nav .shop-nav-option li:nth-child(2) p a {
   height: 116px;
   -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
 }
 
 .shop-nav .shop-nav-option .shop-nav-item:active {
@@ -755,11 +772,11 @@ button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: #f7e296;
   width: 160px;
   height: 160px;
@@ -773,7 +790,7 @@ button {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   margin: 90px 0;
   margin-bottom: 140px;
 }
@@ -784,7 +801,7 @@ button {
   position: absolute;
   width: 100vw;
   bottom: -60px;
-  height: 300px;
+  height: 77%;
   z-index: -10;
   background-color: lightgray;
 }
@@ -795,11 +812,11 @@ button {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border-right: 5px solid black;
   width: 278px;
   min-height: 300px;
@@ -875,24 +892,24 @@ button {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .brands-logo ul li {
   -webkit-filter: grayscale(1);
-          filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .brands-logo ul li:hover {
   -webkit-filter: grayscale(0);
-          filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 /* ====  Логотипы брендов  конец==== */
@@ -901,8 +918,8 @@ button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin-top: 60px;
   margin-bottom: 60px;
   position: relative;
@@ -1007,8 +1024,8 @@ button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
@@ -1017,11 +1034,11 @@ button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 400px;
 }
 
@@ -1073,8 +1090,8 @@ button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   width: 400px;
   font-size: 18px;
 }
@@ -1092,8 +1109,8 @@ button {
 .footer-bottom {
   position: relative;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .footer-bottom ul {
@@ -1190,34 +1207,34 @@ button {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
 }
 
 .inner-page .catalog .btn {
   z-index: 3;
 }
 
-.inner-page .catalog aside {
+.inner-page .catalog section {
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 460px;
   min-height: 1200px;
   background-color: #eeeeee;
 }
 
-.inner-page .catalog aside h3 {
+.inner-page .catalog section h3 {
   font-family: 'Gilroy Extra Bold', sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -1229,25 +1246,25 @@ button {
   background-color: #dbdbdb;
 }
 
-.inner-page .catalog aside form {
+.inner-page .catalog section form {
   margin-top: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.inner-page .catalog aside form input {
+.inner-page .catalog section form input {
   margin-right: 15px;
 }
 
-.inner-page .catalog aside form legend {
+.inner-page .catalog section form legend {
   font-family: 'Gilroy Extra Bold', sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -1257,38 +1274,38 @@ button {
   border-top: 1px solid #000;
 }
 
-.inner-page .catalog aside form .price-selection {
+.inner-page .catalog section form .price-selection {
   min-height: 138px;
 }
 
-.inner-page .catalog aside form fieldset {
+.inner-page .catalog section form fieldset {
   border: none;
   width: 210px;
 }
 
-.inner-page .catalog aside form fieldset .wrap {
+.inner-page .catalog section form fieldset .wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   position: relative;
 }
 
-.inner-page .catalog aside form fieldset .wrap .line {
+.inner-page .catalog section form fieldset .wrap .line {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 196px;
   height: 2px;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   background: linear-gradient(to right, #91c92f 0px, #91c92f 110px, #dbdbdb 110px, #dbdbdb 196px);
   font-size: 0;
 }
 
-.inner-page .catalog aside form fieldset .wrap .round__btn {
+.inner-page .catalog section form fieldset .wrap .round__btn {
   position: relative;
   line-height: 0;
   font-size: 0;
@@ -1298,15 +1315,15 @@ button {
   background: #fff;
   border-radius: 50%;
   -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
-          box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
   z-index: 3;
 }
 
-.inner-page .catalog aside form fieldset .wrap .round__btn:last-child {
+.inner-page .catalog section form fieldset .wrap .round__btn:last-child {
   margin-right: 85px;
 }
 
-.inner-page .catalog aside form fieldset .wrap .round__btn::after {
+.inner-page .catalog section form fieldset .wrap .round__btn::after {
   content: '';
   position: absolute;
   width: 6px;
@@ -1314,13 +1331,13 @@ button {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 4;
 }
 
-.inner-page .catalog aside form fieldset .wrap .round__btn::before {
+.inner-page .catalog section form fieldset .wrap .round__btn::before {
   content: attr(value);
   position: absolute;
   width: 100px;
@@ -1332,11 +1349,11 @@ button {
   opacity: .5;
 }
 
-.inner-page .catalog aside form fieldset input[type="checkbox"] {
+.inner-page .catalog section form fieldset input[type="checkbox"] {
   visibility: hidden;
 }
 
-.inner-page .catalog aside form fieldset input[type="checkbox"] + label::before {
+.inner-page .catalog section form fieldset input[type="checkbox"] + label::before {
   content: '';
   background-image: url("/img/checkbox-off.svg");
   background-repeat: no-repeat;
@@ -1351,7 +1368,7 @@ button {
   -o-transform: translate(-20px, 5px);
 }
 
-.inner-page .catalog aside form fieldset input[type="checkbox"]:checked + label::before {
+.inner-page .catalog section form fieldset input[type="checkbox"]:checked + label::before {
   content: '';
   background-image: url("/img/checkbox-on.svg");
   background-repeat: no-repeat;
@@ -1366,11 +1383,11 @@ button {
   -o-transform: translate(-20px, 5px);
 }
 
-.inner-page .catalog aside form fieldset input[type="radio"] {
+.inner-page .catalog section form fieldset input[type="radio"] {
   visibility: hidden;
 }
 
-.inner-page .catalog aside form fieldset input[type="radio"] + label::before {
+.inner-page .catalog section form fieldset input[type="radio"] + label::before {
   content: '';
   background-image: url("/img/radio-off.svg");
   background-repeat: no-repeat;
@@ -1385,7 +1402,7 @@ button {
   -o-transform: translate(-20px, 5px);
 }
 
-.inner-page .catalog aside form fieldset input[type="radio"]:checked + label::before {
+.inner-page .catalog section form fieldset input[type="radio"]:checked + label::before {
   content: '';
   background-image: url("/img/radio-on.png");
   background-repeat: no-repeat;
@@ -1400,28 +1417,16 @@ button {
   -o-transform: translate(-20px, 5px);
 }
 
-.inner-page .catalog aside form .btn {
+.inner-page .catalog section form .btn {
   width: 200px;
   margin: 0 auto;
-}
-
-.inner-page .catalog-contant {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 
 .inner-page .catalog-contant .content-sort {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   background-color: #ebebeb;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 
 .inner-page .catalog-contant .content-sort button {
@@ -1444,11 +1449,9 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .inner-page .catalog-contant .content-sort ul li {
@@ -1457,8 +1460,8 @@ button {
   font-weight: 400;
   line-height: 18px;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 130px;
-          flex: 0 0 130px;
+  -ms-flex: 0 0 130px;
+  flex: 0 0 130px;
   width: 130px;
 }
 
@@ -1472,9 +1475,9 @@ button {
 
 .inner-page .catalog-contant .content-sort div {
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 140px;
   -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1510,13 +1513,21 @@ button {
 }
 
 .inner-page .catalog-contant .catalog-items {
+  margin-left: 40px;
+}
+
+.inner-page .catalog-contant .catalog-items__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-wrap: wrap;
+  margin-left: -20px;
+}
+
+.inner-page .catalog-contant .catalog-items article {
+  margin-left: 20px;
+  max-width: 360px;
 }
 
 .inner-page .catalog-contant .catalog-items article .price-wrapper {
@@ -1524,11 +1535,11 @@ button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .inner-page .catalog-contant .catalog-items article .price-wrapper p {
@@ -1536,6 +1547,9 @@ button {
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .inner-page .catalog-contant .catalog-items article .price-wrapper span {
@@ -1545,6 +1559,7 @@ button {
   line-height: 18px;
   color: #464646;
   letter-spacing: .16px;
+  min-width: 80px;
 }
 
 .inner-page .catalog-contant .catalog-items article .catalog-items__img {
@@ -1597,7 +1612,7 @@ button {
 
 .inner-page .pagination {
   background-color: #ebebeb;
-  margin: 20px;
+  margin: 20px 40px;
 }
 
 .inner-page .pagination ul {
@@ -1606,10 +1621,10 @@ button {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .inner-page .pagination ul .pagiation-item {
@@ -1645,5 +1660,90 @@ button {
 
 .inner-page .pagination ul li a {
   color: #000;
+}
+
+@-webkit-keyframes drop {
+  from {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+            transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes drop {
+  from {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+            transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.modal-contact {
+  display: none;
+}
+
+.drop {
+  display: block !important;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-name: drop;
+  animation-name: drop;
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+}
+
+@-webkit-keyframes scrol {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scrol {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.scrol {
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-name: scrol;
+  animation-name: scrol;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,6 +1,4 @@
-// document.getElementById('open-menu').onclick = function(){
-// document.querySelector('.flex-wrap').classList.toggle(' visually-hidden');
-// };
+
 (function () {
     onload = function () {
         document.getElementById('sign-in').onclick = function () {
@@ -13,9 +11,9 @@
         document.getElementById('close-modal-btn').onclick = function () {
             document.querySelector('.modal-contact').classList.toggle('visually-hidden');
         };
-        document.getElementById('write-us').onclick = function () {
-            document.querySelector('.modal-contact').classList.toggle('visually-hidden');
-        };
+        // document.getElementById('write-us').onclick = function () {
+        //     document.querySelector('.modal-contact').classList.toggle('visually-hidden');
+        // };
         document.getElementById('close-modal-map__btn').onclick = function () {
             document.querySelector('.big-map').classList.toggle('visually-hidden');
         };
@@ -123,10 +121,10 @@
 
     };
 
-    function toggleClass(elem) {
-        var elem = document.getElementById(elem);
-        elem.className == 'visually-hidden' ? elem.className = ' ' : elem.className = 'visually-hidden';
-    }
+    // function toggleClass(elem) {
+    //     var elem = document.getElementById(elem);
+    //     elem.className == 'visually-hidden' ? elem.className = ' ' : elem.className = 'visually-hidden';
+    // }
     // function addClass(elem) {
     //     var elem = document.getElementById(elem);
     //     elem.className == 'visually-hidden' ? elem.className = ' ' : elem.className = 'visually-hidden';

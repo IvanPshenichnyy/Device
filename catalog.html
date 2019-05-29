@@ -16,7 +16,7 @@
 
 
 <body class="inner">
-  
+
 
 
     <header class="main-header">
@@ -48,7 +48,7 @@
                             <li class="catalog-options catalog-shop">
                                 <a id="open-menu" href="#">Каталог товаров</a>
                                 <ul class="flex-wrap ">
-                                   
+
                                     <ul class="catalog-items ">
                                         <li><a href="">Виртуальная реальность</a></li>
                                         <li><a href="">Моноподы для селфи</a></li>
@@ -87,44 +87,49 @@
 
     <main class=" inner-page">
         <div class="container">
-        <section class="catalog-title" style="position: relative;">
-            <h2>Моноподы для селфи</h2>
-            <ul class="breadcrumb">
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Каталог товаров</a></li>
-                <li class="active"><a href="#">Моноподы для селфи</a></li>
-              </ul>
-        </section>
-    </div>
+            <section class="catalog-title" style="position: relative;">
+                <h2>Моноподы для селфи</h2>
+                <ul class="breadcrumb">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Каталог товаров</a></li>
+                    <li class="active"><a href="#">Моноподы для селфи</a></li>
+                </ul>
+            </section>
+        </div>
         <section class="catalog">
-            <aside>
+            <section>
                 <h3>Фильтры</h3>
                 <form action="" method="get">
-                <fieldset class="price-selection">
-                    <legend>Стоимость</legend>
-                    <div class="wrap">
-                        <span value="От 0" class="round__btn">*</span>
-                        <span class="line">--------</span>
-                        <span value="До 5000" class="round__btn">*</span>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Цвет</legend>
-                    <p><input type="checkbox" checked name="black" id="color-black"><label for="color-black">Черный</label></p>
-                    <p><input type="checkbox" name="white" id="color-white"><label for="color-white">Белый</label></p>
-                    <p><input type="checkbox" name="red" id="color-red"><label for="color-red">Красный</label></p>
-                    <p><input type="checkbox" name="blue" id="color-blue"><label for="color-blue">Синий</label></p>
-                    <p><input type="checkbox" name="pink" id="color-pink"><label for="color-pink">Розовый</label></p>
-                </fieldset>
-                <fieldset>
-                    <legend>Bluetooth</legend>
-                    <p><input type="radio" name="bluetooth" value="bluetooth-yes"  id="bluetooth-yes"><label for="bluetooth-yes">Есть</label></p>
-                    <p><input type="radio" name="bluetooth" value="bluetooth-no"  id="bluetooth-no"><label for="bluetooth-no">Нет</label></p>
-                </fieldset>
-                <button type="submit" class="btn">Показать</button>    
+                    <fieldset class="price-selection">
+                        <legend>Стоимость</legend>
+                        <div class="wrap">
+                            <span value="От 0" class="round__btn">*</span>
+                            <span class="line">--------</span>
+                            <span value="До 5000" class="round__btn">*</span>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Цвет</legend>
+                        <p><input type="checkbox" checked name="black" id="color-black"><label
+                                for="color-black">Черный</label></p>
+                        <p><input type="checkbox" name="white" id="color-white"><label for="color-white">Белый</label>
+                        </p>
+                        <p><input type="checkbox" name="red" id="color-red"><label for="color-red">Красный</label></p>
+                        <p><input type="checkbox" name="blue" id="color-blue"><label for="color-blue">Синий</label></p>
+                        <p><input type="checkbox" name="pink" id="color-pink"><label for="color-pink">Розовый</label>
+                        </p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Bluetooth</legend>
+                        <p><input type="radio" name="bluetooth" value="bluetooth-yes" id="bluetooth-yes"><label
+                                for="bluetooth-yes">Есть</label></p>
+                        <p><input type="radio" name="bluetooth" value="bluetooth-no" id="bluetooth-no"><label
+                                for="bluetooth-no">Нет</label></p>
+                    </fieldset>
+                    <button type="submit" class="btn">Показать</button>
                 </form>
-                
-            </aside>
+
+            </section>
             <div class="catalog-contant">
                 <div class="content-sort">
                     <h3>Сортировка:</h3>
@@ -132,66 +137,99 @@
                         <li class="active"><button href="#">По цене</button></li>
                         <li><button href="#">По типу</button></li>
                         <li><button href="#">По популярности</button></li>
-                   
+
                     </ul>
                     <div><a></a><a></a></div>
-                    
+
                 </div>
 
 
                 <div class="catalog-items">
-                    <article class="catalog-items-page" >
+                    <div class="catalog-items__wrapper">
+
+                        <article class="catalog-items-page">
                             <p class="catalog-items__img"><img src="/img/item-1.jpg.png" alt="Селфи-палка" srcset="">
                                 <span class="btn">В корзину</span>
                                 <span class="add-compare">Добавить к сравнению</span>
-                                </p>
+                            </p>
                             <div class="price-wrapper">
                                 <p>Любительская селфи-палка </p>
                                 <span>500 руб.</span>
                             </div>
-                    </article>
-                    <article class="catalog-items-page" >
-                            <p class="catalog-items__img"><img src="/img/item-3.jpg.png" alt="Селфи-палка" srcset="">
-                            <span class="btn">В корзину</span>
-                            <span class="add-compare">Добавить к сравнению</span>
+                        </article>
+                        <article class="catalog-items-page">
+                            <p class="catalog-items__img"><img src="/img/item-1.jpg.png" alt="Селфи-палка" srcset="">
+                                <span class="btn">В корзину</span>
+                                <span class="add-compare">Добавить к сравнению</span>
                             </p>
                             <div class="price-wrapper">
-                                <p>Профессиональная <br> селфи-палка  </p>
+                                <p>Любительская селфи-палка </p>
+                                <span>500 руб.</span>
+                            </div>
+                        </article>
+                        <article class="catalog-items-page">
+                            <p class="catalog-items__img"><img src="/img/item-1.jpg.png" alt="Селфи-палка" srcset="">
+                                <span class="btn">В корзину</span>
+                                <span class="add-compare">Добавить к сравнению</span>
+                            </p>
+                            <div class="price-wrapper">
+                                <p>Любительская селфи-палка </p>
+                                <span>500 руб.</span>
+                            </div>
+                        </article>
+                        <article class="catalog-items-page">
+                            <p class="catalog-items__img"><img src="/img/item-1.jpg.png" alt="Селфи-палка" srcset="">
+                                <span class="btn">В корзину</span>
+                                <span class="add-compare">Добавить к сравнению</span>
+                            </p>
+                            <div class="price-wrapper">
+                                <p>Любительская селфи-палка </p>
+                                <span>500 руб.</span>
+                            </div>
+                        </article>
+                        <article class="catalog-items-page">
+                            <p class="catalog-items__img"><img src="/img/item-3.jpg.png" alt="Селфи-палка" srcset="">
+                                <span class="btn">В корзину</span>
+                                <span class="add-compare">Добавить к сравнению</span>
+                            </p>
+                            <div class="price-wrapper">
+                                <p>Профессиональная <br> селфи-палка </p>
                                 <span>1500 руб.</span>
                             </div>
-                    </article>
-                    <article class="catalog-items-page" >
+                        </article>
+                        <article class="catalog-items-page">
                             <p class="catalog-items__img"><img src="/img/item-2.jpg.png" alt="Селфи-палка" srcset="">
-                            <span class="btn">В корзину</span>
-                            <span class="add-compare">Добавить к сравнению</span>
+                                <span class="btn">В корзину</span>
+                                <span class="add-compare">Добавить к сравнению</span>
                             </p>
                             <div class="price-wrapper">
                                 <p>Непотопляемая селфи-палка </p>
                                 <span>2 500 руб.</span>
                             </div>
-                    </article>
-                    <article class="catalog-items-page" >
+                        </article>
+                        <article class="catalog-items-page">
                             <p class="catalog-items__img"><img src="/img/item-4.jpg.png" alt="Селфи-палка" srcset="">
-                            <span class="btn">В корзину</span>
-                            <span class="add-compare">Добавить к сравнению</span>
+                                <span class="btn">В корзину</span>
+                                <span class="add-compare">Добавить к сравнению</span>
                             </p>
                             <div class="price-wrapper">
                                 <p>Селфи-палка «Следуй за <br> мной»</p>
                                 <span>4 900 руб.</span>
                             </div>
-                    </article>
-                    
+                        </article>
+
+                    </div>
                 </div>
 
 
-                
+
                 <div class="pagination">
                     <ul>
-                        <li class="pagiation-item pagiation-item_current"><a href="">Назад</a></li>
+                        <li class="pagiation-item "><a href="">Назад</a></li>
                         <li class="pagiation-item active"><a href="">1</a></li>
-                        <li class="pagiation-item" ><a href="">2</a></li>
-                        <li class="pagiation-item" ><a href="">3</a></li>
-                        <li class="pagiation-item" ><a href="">Вперёд</a></li>
+                        <li class="pagiation-item"><a href="">2</a></li>
+                        <li class="pagiation-item"><a href="">3</a></li>
+                        <li class="pagiation-item"><a href="">Вперёд</a></li>
 
                     </ul>
                 </div>
@@ -199,7 +237,7 @@
             </div>
 
         </section>
-       
+
     </main>
 
     <footer class="main-footer ">
@@ -235,31 +273,33 @@
 
     </footer>
 
-  
-        <div class="modal modal-contact visually-hidden">
-            <form  class="modal-form" action="iv.psheni4nii@yandex.ru" method="POST">
-                <div class="flex-form">
-                    <p>
-                        <label for="name">Ваше имя:<br></label>
-                        <input id="name" type="text" placeholder="Имя Фамилия" required>
-                    </p>
-                    <p>
-                        <label for="email">Ваш email:<br></label>
-                        <input id="email" type="email" placeholder="email@example.com" required>
-                    </p>
-                    
-                </div>
+
+    <div class="modal modal-contact visually-hiddenn">
+        <form class="modal-form" action="iv.psheni4nii@yandex.ru" method="POST">
+            <div class="flex-form">
                 <p>
-                    <label for="textarea">Текст письма:<br></label>
-                    <textarea id="textarea" class="textarea" type="textarea" maxlength="400" placeholder="В свободной форме" required></textarea>
+                    <label for="name">Ваше имя:<br></label>
+                    <input id="name" type="text" placeholder="Имя Фамилия" required>
                 </p>
-                <button class="btn" type="submit">Отправить</button>
-                <button type="button" id="close-modal-btn" class="close-modal-btn"><span class="close">Закрыть</span></button>
-            </form>
-        </div>
-<script src="/js/script.js"></script>
-    
-   
+                <p>
+                    <label for="email">Ваш email:<br></label>
+                    <input id="email" type="email" placeholder="email@example.com" required>
+                </p>
+
+            </div>
+            <p>
+                <label for="textarea">Текст письма:<br></label>
+                <textarea id="textarea" class="textarea" type="textarea" maxlength="400" placeholder="В свободной форме"
+                    required></textarea>
+            </p>
+            <button class="btn" type="submit">Отправить</button>
+            <button type="button" id="close-modal-btn" class="close-modal-btn"><span
+                    class="close">Закрыть</span></button>
+        </form>
+    </div>
+    <script src="/js/script.js"></script>
+
+
 </body>
 
 </html>
